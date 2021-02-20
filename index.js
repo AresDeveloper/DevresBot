@@ -13,7 +13,7 @@ client.on('ready', () => {
     message.channel.send('Pong!')
   })
 
-  command(client, 'servers', (message) => {
+  command(client, 'membercount', (message) => {
     client.guilds.cache.forEach((guild) => {
       message.channel.send(
         `${guild.name} has a total of ${guild.memberCount} members`
@@ -76,7 +76,7 @@ command(client, 'serverinfo', (message) => {
     const icon = guild.iconURL()
 
     const embed = new Discord.MessageEmbed()
-      .setTitle(`Server info for "${name}"`)
+      .setTitle(`Server info for "${guild.name}"`)
       .setColor("RED")
       .setThumbnail(icon)
       .addFields(
@@ -103,7 +103,7 @@ command(client, 'serverinfo', (message) => {
   command(client, 'help', (message) => {
 
     const embed = new Discord.MessageEmbed()
-      .setTitle('Devres Commands')
+      .setTitle('//Your help Title')
       .setFooter('Devres || Coded by ! Developer  α я ε s  マ.#0001')
       .setColor('RED')
       .addFields(
