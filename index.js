@@ -44,12 +44,12 @@ client.on('ready', () => {
 
 
 
-  client.users.fetch('').then((user) => {
-    user.send('Hello World!')
+  client.users.fetch('User id to send a message when the bot starts').then((user) => {
+    user.send('message to send when the bot starts')
   })
 
   client.on("message", function(message){
-    if(message.content.startsWith("d!embed")){
+    if(message.content.startsWith("embed command")){
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You dont have the permissions to make an embed").then(msg=>msg.delete({timeout:"5000"}));
         let content = message.content.split(" ").slice(1).join(" ");
             let embed = new Discord.MessageEmbed()
