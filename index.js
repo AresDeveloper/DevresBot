@@ -30,7 +30,7 @@ client.on('ready', () => {
   })
 
   command(client, 'status', (message) => {
-    const content = message.content.replace('!status ', '')
+    const content = message.content.replace('//prefix then status ', '')
     // "!status hello world" -> "hello world"
 
     client.user.setPresence({
@@ -54,10 +54,10 @@ client.on('ready', () => {
         let content = message.content.split(" ").slice(1).join(" ");
             let embed = new Discord.MessageEmbed()
 
-            .setTitle("Devres Embed")
-            .setColor("RED")
+            .setTitle("Your embed title")
+            .setColor("bot color in caps")
             .setDescription(content)
-            .setFooter("Devres || Coded by ! Developer  α я ε s  マ.#0001")
+            .setFooter("Bot footer")
             .setTimestamp();
 
             message.channel.send(embed);
